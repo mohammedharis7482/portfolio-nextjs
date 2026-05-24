@@ -113,14 +113,14 @@ export default function Navbar() {
 
               {/* TEXT */}
               <div className="hidden sm:block">
-                <h2 className="text-sm font-medium tracking-wide">
-                  Mohammed Haris
-                </h2>
+  <h2 className="text-sm font-medium text-white">
+    Mohammed Haris
+  </h2>
 
-                <p className="text-xs text-white/40 mt-0.5">
-                  Frontend Developer
-                </p>
-              </div>
+  <p className="text-xs text-white/45">
+    Frontend Developer
+  </p>
+</div>
             </Link>
 
             {/* DESKTOP NAV */}

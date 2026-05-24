@@ -1,234 +1,202 @@
 "use client";
 
+import Link from "next/link";
 import { motion } from "framer-motion";
-
-import Container from "@/components/layout/Container";
-
-import Reveal from "@/components/animations/Reveal";
 
 export default function Hero() {
   return (
     <section
       id="home"
-      className="relative pt-40 pb-28"
+      className="relative overflow-hidden pt-32 pb-20 md:pt-36 md:pb-24"
     >
-      {/* Background Glow */}
-      <div className="absolute left-[-10%] top-0 w-[500px] h-[500px] bg-cyan-500/10 blur-[160px]" />
+      {/* BACKGROUND GLOWS */}
+      <div className="absolute top-0 left-0 w-[420px] h-[420px] bg-cyan-500/10 blur-[130px]" />
 
-      <div className="absolute right-[-10%] top-[10%] w-[500px] h-[500px] bg-purple-500/10 blur-[180px]" />
+      <div className="absolute top-20 right-0 w-[420px] h-[420px] bg-violet-600/10 blur-[150px]" />
 
-      <Container className="relative z-10">
-        {/* Badge */}
-        <Reveal>
-          <div className="inline-flex items-center gap-3 px-5 py-3 rounded-full border border-white/10 bg-white/[0.03] backdrop-blur-xl mb-16">
-            <div className="w-2 h-2 rounded-full bg-cyan-400" />
+      <div className="max-w-7xl mx-auto px-6 md:px-10 relative z-10">
+        <div className="grid lg:grid-cols-[1.12fr_0.88fr] gap-14 lg:gap-16 items-center">
+          {/* LEFT SIDE */}
+          <motion.div
+            initial={{
+              opacity: 0,
+              y: 40,
+            }}
+            animate={{
+              opacity: 1,
+              y: 0,
+            }}
+            transition={{
+              duration: 0.8,
+            }}
+            className="max-w-3xl"
+          >
+            {/* AVAILABILITY BADGE */}
+            <div className="inline-flex items-center gap-3 px-5 py-3 rounded-full border border-white/10 bg-white/[0.03] backdrop-blur-xl mb-8 md:mb-10">
+              <div className="w-2.5 h-2.5 rounded-full bg-cyan-400 animate-pulse" />
 
-            <span className="text-sm text-white/70">
-              Available for freelance work
-            </span>
-          </div>
-        </Reveal>
+              <span className="text-xs sm:text-sm tracking-wide text-white/65">
+                Available for freelance work
+              </span>
+            </div>
 
-        {/* Grid */}
-        <div className="grid lg:grid-cols-[1.15fr_0.85fr] gap-16 items-center">
-          {/* LEFT */}
-          <div>
-            {/* Heading */}
-            <Reveal>
-              <h1 className="text-[72px] sm:text-[86px] md:text-[110px] lg:text-[118px] font-semibold leading-[0.88] tracking-[-0.07em]">
-                <span className="text-white">
-                  Crafting
-                </span>
-
-                <br />
-
-                <span className="text-white/45">
-                  Premium
-                </span>
-
-                <br />
-
-                <span className="text-white/45">
-                  Digital
-                </span>
-
-                <br />
-
-                <span className="text-white">
-                  Experiences
-                </span>
+            {/* HEADING */}
+            <div className="leading-[0.9] tracking-[-0.05em]">
+              <h1 className="text-[58px] sm:text-[78px] md:text-[98px] lg:text-[112px] font-semibold text-white">
+                Crafting
               </h1>
-            </Reveal>
 
-            {/* Description */}
-            <Reveal delay={0.1}>
-              <p className="mt-10 max-w-2xl text-lg md:text-[20px] leading-[1.8] text-white/55">
-                Frontend Developer & UI/UX Designer
-                focused on building modern,
-                immersive, and visually refined
-                digital products with scalable
-                frontend systems and premium user
-                experiences.
-              </p>
-            </Reveal>
+              <h1 className="text-[58px] sm:text-[78px] md:text-[98px] lg:text-[112px] font-semibold text-white/35">
+                Premium
+              </h1>
 
-            {/* Buttons */}
-            <Reveal delay={0.15}>
-              <div className="flex flex-wrap gap-5 mt-12">
-                <a
-                  href="#projects"
-                  className="h-[60px] px-9 rounded-full bg-white text-black flex items-center justify-center gap-3 text-[16px] font-medium transition hover:scale-[1.02]"
-                >
-                  View Projects
+              <h1 className="text-[58px] sm:text-[78px] md:text-[98px] lg:text-[112px] font-semibold text-white/35">
+                Digital
+              </h1>
 
-                  <span className="text-lg">
-                    ↗
-                  </span>
-                </a>
+              <h1 className="text-[58px] sm:text-[78px] md:text-[98px] lg:text-[112px] font-semibold text-white">
+                Experiences
+              </h1>
+            </div>
 
-                <a
-                  href="#contact"
-                  className="h-[60px] px-9 rounded-full border border-white/10 bg-white/[0.03] backdrop-blur-xl text-white flex items-center justify-center gap-3 text-[16px] font-medium hover:bg-white/10 transition"
-                >
-                  Contact Me
+            {/* DESCRIPTION */}
+            <p className="mt-8 md:mt-10 max-w-xl text-[15px] sm:text-lg leading-[1.9] text-white/55 pr-4 sm:pr-0">
+              Frontend Developer & UI/UX Designer focused on
+              building modern, immersive, and visually refined
+              digital products with scalable frontend systems and
+              premium user experiences.
+            </p>
 
-                  <span className="text-lg">
-                    →
-                  </span>
-                </a>
-              </div>
-            </Reveal>
-
-            {/* Stats */}
-            <Reveal delay={0.2}>
-              <div className="grid grid-cols-3 gap-5 mt-16 max-w-[540px]">
-                {[
-                  {
-                    value: "10+",
-                    label: "Projects",
-                  },
-
-                  {
-                    value: "2+",
-                    label: "Years Experience",
-                  },
-
-                  {
-                    value: "100%",
-                    label: "Client Satisfaction",
-                  },
-                ].map((item) => (
-                  <motion.div
-                    key={item.label}
-                    whileHover={{
-                      y: -5,
-                    }}
-                    transition={{
-                      duration: 0.3,
-                    }}
-                    className="rounded-[28px] border border-white/10 bg-white/[0.03] backdrop-blur-xl px-6 py-7 hover:border-white/20 transition-all duration-500"
-                  >
-                    <h3 className="text-5xl font-semibold tracking-[-0.05em]">
-                      {item.value}
-                    </h3>
-
-                    <p className="text-sm text-white/45 mt-3 leading-relaxed">
-                      {item.label}
-                    </p>
-                  </motion.div>
-                ))}
-              </div>
-            </Reveal>
-          </div>
-
-          {/* RIGHT CARD */}
-          <Reveal delay={0.25}>
-            <div className="relative">
-              {/* Glow */}
-              <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/10 via-transparent to-purple-500/20 blur-[80px]" />
-
-              {/* Card */}
-              <motion.div
-                whileHover={{
-                  y: -6,
-                }}
-                transition={{
-                  duration: 0.4,
-                }}
-                className="relative overflow-hidden rounded-[42px] border border-white/10 bg-white/[0.04] backdrop-blur-2xl p-8 md:p-10 hover:border-white/20 transition-all duration-700"
+            {/* BUTTONS */}
+            <div className="flex flex-col sm:flex-row gap-5 mt-10 md:mt-12">
+              <Link
+                href="#projects"
+                className="group inline-flex items-center justify-center gap-3 h-[62px] px-9 rounded-full bg-white text-black text-base sm:text-lg font-medium transition-all duration-300 hover:scale-[1.02]"
               >
-                {/* Gradient */}
-                <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/10 via-transparent to-purple-500/20 opacity-70" />
+                View Projects
 
-                {/* Content */}
-                <div className="relative z-10">
-                  {/* Label */}
-                  <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-white/10 bg-black/20 backdrop-blur-xl mb-8">
-                    <div className="w-2 h-2 rounded-full bg-cyan-400" />
+                <span className="transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1">
+                  ↗
+                </span>
+              </Link>
 
-                    <span className="text-xs uppercase tracking-[0.18em] text-white/60">
-                      Currently Learning
-                    </span>
-                  </div>
+              <Link
+                href="#contact"
+                className="group inline-flex items-center justify-center gap-3 h-[62px] px-9 rounded-full border border-white/10 bg-white/[0.03] backdrop-blur-xl text-white text-base sm:text-lg font-medium transition-all duration-300 hover:bg-white hover:text-black"
+              >
+                Contact Me
 
-                  {/* Title */}
-                  <h2 className="text-[42px] md:text-[52px] font-semibold leading-[1.02] tracking-[-0.05em] mb-10">
-                    Full Stack
-                    <br />
-                    Development &
-                    <br />
-                    AI Architecture
-                  </h2>
+                <span className="transition-transform duration-300 group-hover:translate-x-1">
+                  →
+                </span>
+              </Link>
+            </div>
 
-                  {/* Cards */}
-                  <div className="space-y-5">
-                    {/* Design */}
-                    <motion.div
-                      whileHover={{
-                        scale: 1.02,
-                      }}
-                      transition={{
-                        duration: 0.3,
-                      }}
-                      className="rounded-[28px] border border-cyan-500/20 bg-cyan-500/10 p-6 backdrop-blur-xl"
-                    >
-                      <p className="text-sm text-white/45 mb-3">
-                        Design
-                      </p>
+            {/* STATS */}
+            <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 sm:gap-5 mt-14 md:mt-16">
+              {/* CARD 1 */}
+              <div className="min-h-[145px] sm:min-h-[165px] rounded-[30px] border border-white/10 bg-white/[0.03] backdrop-blur-xl p-6 sm:p-7 flex flex-col justify-between">
+                <h3 className="text-4xl sm:text-5xl font-semibold tracking-tight text-white">
+                  10+
+                </h3>
 
-                      <h3 className="text-2xl font-semibold tracking-[-0.03em]">
-                        UI/UX & Visual Systems
-                      </h3>
-                    </motion.div>
+                <p className="text-white/40 text-sm sm:text-base leading-relaxed">
+                  Projects
+                </p>
+              </div>
 
-                    {/* Frontend */}
-                    <motion.div
-                      whileHover={{
-                        scale: 1.02,
-                      }}
-                      transition={{
-                        duration: 0.3,
-                      }}
-                      className="rounded-[28px] border border-purple-500/20 bg-purple-500/10 p-6 backdrop-blur-xl"
-                    >
-                      <p className="text-sm text-white/45 mb-3">
-                        Frontend
-                      </p>
+              {/* CARD 2 */}
+              <div className="min-h-[145px] sm:min-h-[165px] rounded-[30px] border border-white/10 bg-white/[0.03] backdrop-blur-xl p-6 sm:p-7 flex flex-col justify-between">
+                <h3 className="text-4xl sm:text-5xl font-semibold tracking-tight text-white">
+                  2+
+                </h3>
 
-                      <h3 className="text-2xl font-semibold tracking-[-0.03em]">
-                        React • Next.js • Tailwind
-                      </h3>
-                    </motion.div>
-                  </div>
+                <p className="text-white/40 text-sm sm:text-base leading-relaxed">
+                  Years Experience
+                </p>
+              </div>
+
+              {/* CARD 3 */}
+              <div className="col-span-2 sm:col-span-1 min-h-[145px] sm:min-h-[165px] rounded-[30px] border border-white/10 bg-white/[0.03] backdrop-blur-xl p-6 sm:p-7 flex flex-col justify-between">
+                <h3 className="text-4xl sm:text-5xl font-semibold tracking-tight text-white">
+                  100%
+                </h3>
+
+                <p className="text-white/40 text-sm sm:text-base leading-relaxed">
+                  Client Satisfaction
+                </p>
+              </div>
+            </div>
+          </motion.div>
+
+          {/* RIGHT SIDE */}
+          <motion.div
+            initial={{
+              opacity: 0,
+              x: 40,
+            }}
+            animate={{
+              opacity: 1,
+              x: 0,
+            }}
+            transition={{
+              duration: 0.8,
+              delay: 0.15,
+            }}
+            className="relative"
+          >
+            <div className="relative overflow-hidden rounded-[38px] border border-white/10 bg-white/[0.03] backdrop-blur-2xl p-6 sm:p-7 lg:p-8">
+              {/* INNER GLOW */}
+              <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/10 via-transparent to-violet-500/10" />
+
+              <div className="relative z-10">
+                {/* LABEL */}
+                <div className="inline-flex items-center gap-3 px-5 py-3 rounded-full border border-white/10 bg-white/[0.03] backdrop-blur-xl mb-8">
+                  <div className="w-2.5 h-2.5 rounded-full bg-cyan-400 animate-pulse" />
+
+                  <span className="text-[11px] sm:text-xs uppercase tracking-[0.28em] text-white/55">
+                    Currently Learning
+                  </span>
                 </div>
 
-                {/* Bottom Glow */}
-                <div className="absolute bottom-0 left-0 right-0 h-[140px] bg-gradient-to-t from-black/20 to-transparent" />
-              </motion.div>
+                {/* MAIN TEXT */}
+                <h2 className="text-[34px] sm:text-[46px] lg:text-[54px] leading-[1] tracking-[-0.04em] font-semibold text-white">
+                  Full Stack
+                  <br />
+                  Development &
+                  <br />
+                  AI Architecture
+                </h2>
+
+                {/* SKILL BOXES */}
+                <div className="space-y-5 mt-10">
+                  {/* DESIGN */}
+                  <div className="rounded-[26px] border border-cyan-500/20 bg-cyan-500/10 p-6 sm:p-7">
+                    <p className="text-sm text-white/45 mb-3">
+                      Design
+                    </p>
+
+                    <h3 className="text-[20px] sm:text-[24px] font-semibold tracking-tight text-white">
+                      UI/UX & Visual Systems
+                    </h3>
+                  </div>
+
+                  {/* FRONTEND */}
+                  <div className="rounded-[26px] border border-violet-500/20 bg-violet-500/10 p-6 sm:p-7">
+                    <p className="text-sm text-white/45 mb-3">
+                      Frontend
+                    </p>
+
+                    <h3 className="text-[20px] sm:text-[24px] font-semibold tracking-tight text-white">
+                      React • Next.js • Tailwind
+                    </h3>
+                  </div>
+                </div>
+              </div>
             </div>
-          </Reveal>
+          </motion.div>
         </div>
-      </Container>
+      </div>
     </section>
   );
 }
