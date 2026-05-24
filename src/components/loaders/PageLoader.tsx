@@ -29,7 +29,7 @@ export default function PageLoader({
           <div className="absolute w-[500px] h-[500px] bg-cyan-500/10 blur-[180px]" />
 
           {/* CONTENT */}
-          <div className="relative z-10 flex flex-col items-center">
+          <div className="relative z-10 flex flex-col items-center px-6">
             {/* LOGO */}
             <motion.div
               initial={{
@@ -44,7 +44,7 @@ export default function PageLoader({
                 duration: 1,
                 ease: [0.22, 1, 0.36, 1],
               }}
-              className="w-28 h-28 rounded-full bg-white text-black flex items-center justify-center text-3xl font-semibold tracking-[0.22em]"
+              className="w-24 h-24 sm:w-28 sm:h-28 rounded-full bg-white text-black flex items-center justify-center text-3xl font-semibold tracking-[0.22em]"
             >
               MH
             </motion.div>
@@ -63,7 +63,7 @@ export default function PageLoader({
                 delay: 0.3,
                 duration: 0.8,
               }}
-              className="mt-8 text-2xl font-medium tracking-[0.18em]"
+              className="mt-8 text-[30px] sm:text-2xl font-medium tracking-[0.14em] sm:tracking-[0.18em] text-center"
             >
               Mohammed Haris
             </motion.h1>
@@ -80,13 +80,13 @@ export default function PageLoader({
                 delay: 0.5,
                 duration: 0.8,
               }}
-              className="mt-3 text-sm uppercase tracking-[0.3em] text-white/40"
+              className="mt-3 px-6 sm:px-0 text-center uppercase tracking-[0.22em] sm:tracking-[0.32em] text-white/40 text-[11px] sm:text-sm leading-[1.9] max-w-[320px] sm:max-w-none"
             >
               Frontend Developer & UI/UX Designer
             </motion.p>
 
             {/* LOADING BAR */}
-            <div className="relative mt-12 w-[240px] h-[2px] bg-white/10 overflow-hidden rounded-full">
+            <div className="relative mt-12 w-[220px] sm:w-[240px] h-[2px] bg-white/10 overflow-hidden rounded-full">
               <motion.div
                 initial={{
                   x: "-100%",
