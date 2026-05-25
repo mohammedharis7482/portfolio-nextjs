@@ -47,6 +47,10 @@ export default function Navbar() {
   const [activeSection, setActiveSection] =
     useState("home");
 
+  // HIDE NAVBAR WHEN PROJECT MODAL OPENS
+  const [hideNavbar, setHideNavbar] =
+    useState(false);
+
   useEffect(() => {
     const handleScroll = () => {
       const sections = navLinks.map((link) =>
@@ -70,17 +74,42 @@ export default function Navbar() {
       });
     };
 
+    // CHECK PROJECT MODAL
+    const checkModal = () => {
+      const modal =
+        document.querySelector(
+          "[data-project-modal]"
+        );
+
+      setHideNavbar(!!modal);
+    };
+
+    handleScroll();
+
+    checkModal();
+
     window.addEventListener(
       "scroll",
       handleScroll
     );
 
-    return () =>
+    const interval = setInterval(
+      checkModal,
+      100
+    );
+
+    return () => {
       window.removeEventListener(
         "scroll",
         handleScroll
       );
+
+      clearInterval(interval);
+    };
   }, []);
+
+  // HIDE NAVBAR
+  if (hideNavbar) return null;
 
   return (
     <>
@@ -113,14 +142,14 @@ export default function Navbar() {
 
               {/* TEXT */}
               <div className="hidden sm:block">
-  <h2 className="text-sm font-medium text-white">
-    Mohammed Haris
-  </h2>
+                <h2 className="text-sm font-medium text-white">
+                  Mohammed Haris
+                </h2>
 
-  <p className="text-xs text-white/45">
-    Frontend Developer
-  </p>
-</div>
+                <p className="text-xs text-white/45">
+                  Frontend Developer
+                </p>
+              </div>
             </Link>
 
             {/* DESKTOP NAV */}

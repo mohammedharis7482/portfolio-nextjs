@@ -73,19 +73,19 @@ export default function Skills() {
   return (
     <section
       id="skills"
-      className="relative py-32"
+      className="relative py-20 md:py-28 lg:py-32 overflow-hidden"
     >
       {/* Background Glow */}
       <div className="absolute right-0 top-10 w-[450px] h-[450px] bg-cyan-500/10 blur-[160px]" />
 
       <Container className="relative z-10">
         {/* HEADER */}
-        <Reveal className="max-w-3xl mb-24">
-          <p className="text-xs uppercase tracking-[0.35em] text-white/40 mb-5">
+        <Reveal className="max-w-3xl mb-14 md:mb-20 lg:mb-24">
+          <p className="text-[11px] uppercase tracking-[0.35em] text-white/40 mb-4 md:mb-5">
             Skills & Expertise
           </p>
 
-          <h2 className="text-5xl md:text-7xl font-semibold leading-[0.95] tracking-[-0.04em]">
+          <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-semibold leading-[0.95] tracking-[-0.04em]">
             Creating Modern
             <br />
 
@@ -94,7 +94,7 @@ export default function Skills() {
             </span>
           </h2>
 
-          <p className="text-white/50 text-lg md:text-xl leading-relaxed mt-8 max-w-2xl">
+          <p className="text-white/50 text-[15px] sm:text-lg md:text-xl leading-relaxed mt-6 md:mt-8 max-w-2xl pr-1">
             A blend of frontend engineering,
             interface design, and modern digital
             workflows focused on building immersive,
@@ -103,7 +103,7 @@ export default function Skills() {
         </Reveal>
 
         {/* GRID */}
-        <StaggerContainer className="grid lg:grid-cols-3 gap-8">
+        <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6 lg:gap-8">
           {skillCategories.map((category) => (
             <StaggerItem key={category.title}>
               <motion.div
@@ -113,7 +113,7 @@ export default function Skills() {
                 transition={{
                   duration: 0.4,
                 }}
-                className="group relative overflow-hidden rounded-[38px] border border-white/10 hover:border-white/20 bg-white/[0.03] backdrop-blur-2xl transition-all duration-700"
+                className="group relative overflow-hidden rounded-[30px] sm:rounded-[34px] lg:rounded-[38px] border border-white/10 hover:border-white/20 bg-white/[0.03] backdrop-blur-2xl transition-all duration-700 h-full"
               >
                 {/* Gradient */}
                 <div
@@ -126,28 +126,28 @@ export default function Skills() {
                 </div>
 
                 {/* Content */}
-                <div className="relative z-10 p-8 md:p-9">
+                <div className="relative z-10 p-6 sm:p-7 md:p-8 lg:p-9 h-full flex flex-col">
                   {/* Label */}
-                  <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-white/10 bg-black/20 backdrop-blur-xl mb-8">
+                  <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-white/10 bg-black/20 backdrop-blur-xl mb-6 md:mb-8 w-fit">
                     <div className="w-2 h-2 rounded-full bg-white/70" />
 
-                    <span className="text-xs uppercase tracking-[0.18em] text-white/60">
+                    <span className="text-[11px] sm:text-xs uppercase tracking-[0.18em] text-white/60">
                       Expertise
                     </span>
                   </div>
 
                   {/* Title */}
-                  <h3 className="text-3xl font-semibold tracking-[-0.03em] leading-tight mb-5">
+                  <h3 className="text-2xl sm:text-3xl font-semibold tracking-[-0.03em] leading-tight mb-4 md:mb-5">
                     {category.title}
                   </h3>
 
                   {/* Description */}
-                  <p className="text-white/50 leading-relaxed text-[15px] mb-10">
+                  <p className="text-white/50 leading-relaxed text-[14px] sm:text-[15px] mb-8 md:mb-10">
                     {category.description}
                   </p>
 
                   {/* Skills */}
-                  <div className="flex flex-wrap gap-3">
+                  <div className="flex flex-wrap gap-2.5 sm:gap-3 mt-auto">
                     {category.skills.map((skill) => (
                       <motion.div
                         key={skill}
@@ -157,7 +157,7 @@ export default function Skills() {
                         transition={{
                           duration: 0.2,
                         }}
-                        className="px-4 py-2 rounded-full border border-white/10 bg-white/[0.04] text-sm text-white/70 backdrop-blur-xl"
+                        className="px-3.5 sm:px-4 py-2 rounded-full border border-white/10 bg-white/[0.04] text-[13px] sm:text-sm text-white/70 backdrop-blur-xl"
                       >
                         {skill}
                       </motion.div>

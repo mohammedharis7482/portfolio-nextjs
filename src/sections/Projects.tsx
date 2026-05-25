@@ -162,18 +162,19 @@ export default function Projects() {
   return (
     <section
       id="projects"
-      className="relative py-32"
+      className="relative py-20 md:py-28 lg:py-32 overflow-hidden"
     >
+      {/* GLOW */}
       <div className="absolute top-32 left-0 w-[450px] h-[450px] bg-cyan-500/10 blur-[160px]" />
 
-      <div className="max-w-7xl mx-auto px-6 md:px-10 relative z-10">
+      <div className="max-w-7xl mx-auto px-5 sm:px-6 md:px-10 relative z-10">
         {/* Heading */}
-        <Reveal className="max-w-3xl mb-20">
-          <p className="text-xs uppercase tracking-[0.35em] text-white/40 mb-5">
+        <Reveal className="max-w-3xl mb-16 md:mb-20">
+          <p className="text-[11px] sm:text-xs uppercase tracking-[0.35em] text-white/40 mb-5">
             Selected Projects
           </p>
 
-          <h2 className="text-5xl md:text-7xl font-semibold leading-[0.95] tracking-[-0.04em]">
+          <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-semibold leading-[0.95] tracking-[-0.04em]">
             Real Projects &
             <br />
 
@@ -182,7 +183,7 @@ export default function Projects() {
             </span>
           </h2>
 
-          <p className="text-white/50 text-lg md:text-xl max-w-2xl mt-8 leading-relaxed">
+          <p className="text-white/50 text-[15px] sm:text-lg md:text-xl max-w-2xl mt-7 md:mt-8 leading-relaxed">
             A curated collection of real-world UI/UX,
             frontend development, and digital product
             experiences crafted with modern visual
@@ -191,7 +192,7 @@ export default function Projects() {
         </Reveal>
 
         {/* Grid */}
-        <StaggerContainer className="grid lg:grid-cols-2 gap-8">
+        <StaggerContainer className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8">
           {projects.map((project) => (
             <StaggerItem key={project.title}>
               <motion.button
@@ -204,10 +205,10 @@ export default function Projects() {
                 onClick={() =>
                   setSelectedProject(project)
                 }
-                className="group relative overflow-hidden rounded-[40px] border border-white/10 hover:border-white/20 bg-white/[0.03] backdrop-blur-2xl text-left w-full transition-all duration-700"
+                className="group relative overflow-hidden rounded-[30px] sm:rounded-[40px] border border-white/10 hover:border-white/20 bg-white/[0.03] backdrop-blur-2xl text-left w-full transition-all duration-700"
               >
                 {/* IMAGE */}
-                <div className="relative overflow-hidden h-[420px]">
+                <div className="relative overflow-hidden h-[300px] sm:h-[360px] md:h-[420px]">
                   <Image
                     src={project.image}
                     alt={project.title}
@@ -223,29 +224,29 @@ export default function Projects() {
                   <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent" />
 
                   {/* Category */}
-                  <div className="absolute top-5 left-5 px-4 py-2 rounded-full border border-white/10 bg-black/40 backdrop-blur-xl text-[11px] uppercase tracking-[0.22em] text-white/70">
+                  <div className="absolute top-4 left-4 sm:top-5 sm:left-5 px-4 py-2 rounded-full border border-white/10 bg-black/40 backdrop-blur-xl text-[10px] sm:text-[11px] uppercase tracking-[0.22em] text-white/70">
                     {project.category}
                   </div>
                 </div>
 
                 {/* Content */}
-                <div className="relative z-10 p-8 md:p-10">
-                  <h3 className="text-3xl md:text-4xl font-semibold leading-tight tracking-[-0.03em] mb-5">
+                <div className="relative z-10 p-6 sm:p-8 md:p-10">
+                  <h3 className="text-[28px] sm:text-3xl md:text-4xl font-semibold leading-tight tracking-[-0.03em] mb-4 md:mb-5">
                     {project.title}
                   </h3>
 
-                  <p className="text-white/55 text-lg leading-relaxed mb-8">
+                  <p className="text-white/55 text-[15px] sm:text-lg leading-relaxed mb-7 md:mb-8">
                     {project.description}
                   </p>
 
                   {/* Tools */}
-                  <div className="flex flex-wrap gap-3 mb-10">
+                  <div className="flex flex-wrap gap-3 mb-8 md:mb-10">
                     {project.tools
                       .slice(0, 3)
                       .map((tool) => (
                         <div
                           key={tool}
-                          className="px-4 py-2 rounded-full border border-white/10 bg-white/[0.03] text-sm text-white/70"
+                          className="px-4 py-2 rounded-full border border-white/10 bg-white/[0.03] text-xs sm:text-sm text-white/70"
                         >
                           {tool}
                         </div>
@@ -253,12 +254,12 @@ export default function Projects() {
                   </div>
 
                   {/* Bottom */}
-                  <div className="flex items-center justify-between">
-                    <span className="text-white/75 text-sm tracking-wide">
+                  <div className="flex items-center justify-between gap-4">
+                    <span className="text-white/75 text-xs sm:text-sm tracking-wide">
                       View Project Details
                     </span>
 
-                    <div className="w-14 h-14 rounded-full border border-white/10 flex items-center justify-center text-xl bg-white/[0.03] group-hover:bg-white group-hover:text-black transition-all duration-500">
+                    <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-full border border-white/10 flex items-center justify-center text-lg sm:text-xl bg-white/[0.03] group-hover:bg-white group-hover:text-black transition-all duration-500 shrink-0">
                       ↗
                     </div>
                   </div>
@@ -270,12 +271,12 @@ export default function Projects() {
       </div>
 
       <ProjectModal
-  project={selectedProject}
-  isOpen={!!selectedProject}
-  onClose={() =>
-    setSelectedProject(null)
-  }
-/>
+        project={selectedProject}
+        isOpen={!!selectedProject}
+        onClose={() =>
+          setSelectedProject(null)
+        }
+      />
     </section>
   );
 }

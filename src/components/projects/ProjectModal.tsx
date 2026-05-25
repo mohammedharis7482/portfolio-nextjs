@@ -13,6 +13,7 @@ export default function ProjectModal({
     <AnimatePresence>
       {isOpen && (
         <motion.div
+        data-project-modal
           className="fixed inset-0 z-[9999] bg-black/80 backdrop-blur-2xl flex items-center justify-center p-4 md:p-6"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
