@@ -16,37 +16,42 @@ import StaggerItem from "@/components/animations/StaggerItem";
 
 const projects = [
   {
-    title: "Sports Booking Dashboard",
-
-    category: "UI/UX + FRONTEND",
-
+    title: "PlaySphere Admin Dashboard",
+  
+    category: "FULL STACK PROJECT",
+  
     image: "/projects/sports-dashboard.jpg",
-
+  
     imagePosition: "center",
-
+  
     description:
-      "Modern sports booking dashboard designed and developed with analytics systems, scheduling management, and premium SaaS-style experiences.",
-
+      "A full-stack sports turf booking admin dashboard built with Next.js, TypeScript, Tailwind CSS, Prisma, PostgreSQL, and API routes. The system includes dashboard analytics, turf management, booking management, customer data, revenue insights, and real backend integration.",
+  
     role:
-      "UI/UX Designer & Frontend Developer",
-
-    timeline: "3 Weeks",
-
+      "Full Stack Developer & UI/UX Designer",
+  
+    timeline: "4 Weeks",
+  
     tools: [
       "Next.js",
-      "React",
+      "TypeScript",
+      "Prisma",
+      "PostgreSQL",
       "Tailwind CSS",
-      "Figma",
+      "Vercel",
     ],
-
+  
     challenge:
-      "Creating a scalable sports management dashboard with modern SaaS aesthetics while maintaining usability and responsive architecture.",
-
+      "Building a complete admin dashboard with a premium SaaS-style UI, real database structure, API integration, booking workflows, turf management, and responsive frontend architecture.",
+  
     solution:
-      "Designed and developed a premium dashboard experience with reusable UI systems and modern frontend interactions.",
-
+      "Designed and developed a full-stack dashboard using Next.js App Router, TypeScript, Prisma ORM, PostgreSQL database, reusable UI components, REST API routes, and a clean admin experience for managing sports turf bookings.",
+  
     outcome:
-      "Delivered a modern sports booking dashboard with premium user experience and scalable frontend structure.",
+      "Completed and deployed a real full-stack admin dashboard with live data, dashboard statistics, booking status tracking, turf management, revenue overview, and production deployment on Vercel.",
+  
+    live:
+      "https://playsphere-dashboard-hazel.vercel.app/dashboard",
   },
 
   {

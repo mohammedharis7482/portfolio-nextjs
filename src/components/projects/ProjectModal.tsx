@@ -179,6 +179,16 @@ export default function ProjectModal({
                     View Case Study ↗
                   </a>
                 )}
+                {project.live && (
+  <a
+    href={project.live}
+    target="_blank"
+    rel="noopener noreferrer"
+    className="h-[58px] px-8 rounded-full bg-white text-black flex items-center justify-center font-medium hover:scale-[1.03] transition duration-300"
+  >
+    View Live Project ↗
+  </a>
+)}
 
                 <button
                   onClick={onClose}
